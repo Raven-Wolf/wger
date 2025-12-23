@@ -1,9 +1,21 @@
-#!/usr/bin/env python
-# -*- coding: utf-8 -*-
+# This file is part of wger Workout Manager.
+#
+# wger Workout Manager is free software: you can redistribute it and/or modify
+# it under the terms of the GNU Affero General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# (at your option) any later version.
+#
+# wger Workout Manager is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU Affero General Public License
+
+# ruff: noqa: F405
 
 # wger
-from wger.settings_global import *
-
+from .settings_global import *  # noqa: F403
 
 # Use 'DEBUG = True' to get more details for server errors
 DEBUG = True
@@ -16,16 +28,16 @@ WGER_SETTINGS["ALLOW_UPLOAD_VIDEOS"] = False
 WGER_SETTINGS["MIN_ACCOUNT_AGE_TO_TRUST"] = 21  # in days
 WGER_SETTINGS["EXERCISE_CACHE_TTL"] = 3600  # in seconds
 
-DATABASES = {{
-    'default': {{
-        'ENGINE': 'django.db.backends.{dbengine}',
-        'NAME': '{dbname}',
-        'USER': '{dbuser}',
-        'PASSWORD': '{dbpassword}',
-        'HOST': '{dbhost}',
-        'PORT': '{dbport}',
-    }}
-}}  # yapf: disable
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': '/Users/roland/Entwicklung/wger/server/database.sqlite',
+        'USER': '',
+        'PASSWORD': '',
+        'HOST': '',
+        'PORT': '',
+    }
+}  # yapf: disable
 
 # List of administrations
 ADMINS = (('Your name', 'your_email@example.com'),)
@@ -39,7 +51,7 @@ MANAGERS = ADMINS
 TIME_ZONE = 'Europe/Berlin'
 
 # Make this unique, and don't share it with anybody.
-SECRET_KEY = '{default_key}'
+SECRET_KEY = '61fxc$k%9nj!be-_up9%xzm(z)9l7$h33b1!@bf9581=c-03%p'
 
 # Your reCaptcha keys
 RECAPTCHA_PUBLIC_KEY = ''
@@ -49,11 +61,11 @@ USE_RECAPTCHA = False
 # The site's URL (e.g. http://www.my-local-gym.com or http://localhost:8000)
 # This is needed for uploaded files and images (exercise images, etc.) to be
 # properly served.
-SITE_URL = '{siteurl}'
+SITE_URL = 'http://localhost:8000'
 
 # Path to uploaded files
 # Absolute filesystem path to the directory that will hold user-uploaded files.
-MEDIA_ROOT = '{media_folder_path}'
+MEDIA_ROOT = '/Users/roland/Entwicklung/wger/server/media'
 MEDIA_URL = '/media/'
 
 # Allow all hosts to access the application. Change if used in production.
